@@ -69,7 +69,8 @@ export default async (context) => {
 
       if (event.type === 'checkout.session.completed') {
         const session = event.data.object;
-        const userId = session.metadata.userId;
+        // const userId = session.metadata.userId;
+        const userId = 'marcotachtest'
         const orderId = session.id;
 
         await appwrite.createOrder(databaseId, collectionId, userId, orderId);
